@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
+
 export const HomePage = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const regions = ["Kanto", "Kansai", "Tohoku", "Hokkaido", "Shikoku", "Chugoku", "Okinawa"];
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
   return (
     <div className="home-page">
       <div className="div">
@@ -39,10 +46,21 @@ export const HomePage = () => {
             <button className="enabled-wrapper">
               <div className="enabled">Trending Now</div>
             </button>
-            <button className="button-2">
-              <div className="text-wrapper-2">Regions</div>
-              <img className="vector" alt="Vector" src="/img/vector.svg" />
-            </button>
+            
+            <button className="button-2" onClick={toggleDropdown}>
+        <div className="text-wrapper-2">Regions</div>
+        <img className="vector" alt="Vector" src="/img/vector.svg" />
+      </button>
+      {showDropdown && (
+        <div className="dropdown-menu">
+          <ul>
+            {regions.map((region, index) => (
+              <li key={index}>{region}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+               
             <button className="div-wrapper">
               <div className="enabled">Essentials</div>
             </button>
