@@ -30,75 +30,45 @@ export const Products = () => {
                 Help
                 <br />
               </span>
-              <span className="span">
-                Customer Service
-                <br />
-              </span>
-              <span className="text-wrapper">
-                Find a store
-                <br />
-                Legal &amp; Privacy
-                <br />
-                Contact
-                <br />
-                Report a scam
-                <br />
-                Cookie Settings
-              </span>
+              <ul className="span">
+                <li>Customer Service</li>
+                <li>Legal &amp; Privacy</li>
+                <li>Contact</li>
+                <li>Report a scam</li>
+                <li>Cookie Settings</li>
+              </ul>
             </p>
-            <p className="div-3">
-              <span className="text-wrapper">
-                Shop
-                <br />
-              </span>
-              <span className="span">
-                Ladies
-                <br />
-              </span>
-              <span className="text-wrapper">
-                Men
-                <br />
-                Kids
-                <br />
-                Home
-                <br />
-                Sport
-                <br />
-                <br />
-                <br />
-              </span>
-            </p>
-            <p className="div-4">
-              <span className="text-wrapper">
-                Sign up now and be the first to know about exclusive offers, latest fashion news &amp; style tips!
-                <br />
-                <br />
-              </span>
-              <span className="text-wrapper-2">Read more</span>
+            <p className="text-wrapper-2">
+              Stay Connected with Us! Discover the best omiyage from Japan and
+              be in the know about exclusive offers and cultural insights
+              <br />
+              <br /> [Explore More]
             </p>
           </div>
         </div>
         <div className="hero">
           <div className="overlap">
-            <img className="img" alt="Image" src="/img/image-18.png" />
-            <img className="image-2" alt="Image" src="/img/image-17.png" />
+            <img className="img" alt="Image" src="/img/image-1.png" />
+            <img className="image-2" alt="Image" src="/img/Yatsuhashi.png" />
             <div className="overlap-2">
-              <img className="image-3" alt="Image" src="/img/image-15.png" />
-              <img className="image-4" alt="Image" src="/img/image-15.png" />
-              <p className="text-wrapper-3">The key to comfort and fusion.</p>
+              <img className="image-3" alt="Image" src="/img/image-4.png" />
+              <img className="image-4" alt="Image" src="/img/image-4.png" />
+              <p className="text-wrapper-3">
+                Elevate Gifting with a Touch of Japan
+              </p>
             </div>
             <div className="overlap-group-2">
-              <div className="text-wrapper-4">Street Wear.</div>
-              <img className="image-5" alt="Image" src="/img/image-14.png" />
+              <div className="text-wrapper-4">With love.</div>
+              <img className="image-5" alt="Image" src="/img/image-5.png" />
             </div>
           </div>
         </div>
         <div className="vertical-container">
           <div className="overlap-3">
-            <img className="image-6" alt="Image" src="/img/image-13.png" />
+            <img className="image-6" alt="Image" src="/img/image-6.png" />
             <div className="checkbox">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-12.png" />
+                <img className="image-7" alt="Image" src="/img/image-7.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Flannel shirt</div>
@@ -108,7 +78,7 @@ export const Products = () => {
             </div>
             <div className="overlap-wrapper">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-11.png" />
+                <img className="image-7" alt="Image" src="/img/image-8.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Flannel shirt</div>
@@ -118,7 +88,7 @@ export const Products = () => {
             </div>
             <div className="overlap-group-wrapper">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-10.png" />
+                <img className="image-7" alt="Image" src="/img/image-9.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Flannel shirt</div>
@@ -128,7 +98,7 @@ export const Products = () => {
             </div>
             <div className="button">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-9.png" />
+                <img className="image-7" alt="Image" src="/img/image-10.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Cargo Joggers</div>
@@ -138,7 +108,7 @@ export const Products = () => {
             </div>
             <div className="div-wrapper">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-8.png" />
+                <img className="image-7" alt="Image" src="/img/image-11.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Cargo Joggers</div>
@@ -148,7 +118,7 @@ export const Products = () => {
             </div>
             <div className="button-2">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-7.png" />
+                <img className="image-7" alt="Image" src="/img/image-12.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Cargo Joggers</div>
@@ -158,7 +128,7 @@ export const Products = () => {
             </div>
             <div className="container">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-6.png" />
+                <img className="image-7" alt="Image" src="/img/image-13.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Checked shirt</div>
@@ -168,7 +138,7 @@ export const Products = () => {
             </div>
             <div className="container-2">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-5.png" />
+                <img className="image-7" alt="Image" src="/img/image-14.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Checked shirt</div>
@@ -178,7 +148,7 @@ export const Products = () => {
             </div>
             <div className="container-3">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-4.png" />
+                <img className="image-7" alt="Image" src="/img/image-15.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Checked shirt</div>
@@ -188,7 +158,7 @@ export const Products = () => {
             </div>
             <div className="container-4">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-3.png" />
+                <img className="image-7" alt="Image" src="/img/image-16.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Sweatshirt</div>
@@ -198,7 +168,7 @@ export const Products = () => {
             </div>
             <div className="container-5">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-2.png" />
+                <img className="image-7" alt="Image" src="/img/image-17.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Sweatshirt</div>
@@ -208,7 +178,7 @@ export const Products = () => {
             </div>
             <div className="container-6">
               <div className="overlap-group-3">
-                <img className="image-7" alt="Image" src="/img/image-1.png" />
+                <img className="image-7" alt="Image" src="/img/image-18.png" />
                 <div className="text-input" />
                 <div className="text-input-2" />
                 <div className="cargotrousers">Sweatshirt</div>
@@ -219,26 +189,15 @@ export const Products = () => {
             <div className="text-input-3" />
             <div className="text-input-4" />
             <div className="text-wrapper-5">SORT</div>
-            <div className="text-wrapper-6">Filter</div>
-            <div className="text-wrapper-7">28 Items</div>
-            <div className="text-wrapper-8">Load More</div>
-            <div className="text-wrapper-9">STREET WEAR Collection</div>
+            <div className="text-wrapper-6">28 Items</div>
+            <div className="text-wrapper-7">Load More</div>
+            <div className="text-wrapper-8">OmiyageOdyssey Collection</div>
             <img className="arrow" alt="Arrow" src="/img/arrow-2.svg" />
           </div>
         </div>
         <div className="text-input-container">
-          <div className="cart">
-            <img className="delivery-truck" alt="Delivery truck" src="/img/delivery-truck-1.png" />
-          </div>
           <div className="home-menu">Home</div>
-          <div className="findastore-menu">Find a store</div>
-          <div className="customerservice">Customer Service</div>
-          <div className="card">
-            <div className="enabled-login">Log-In</div>
-          </div>
-          <button className="hovered-signup-wrapper">
-            <div className="hovered-signup">Sign-Up</div>
-          </button>
+          <div className="findastore-menu">Customer Service</div>
         </div>
       </div>
     </div>

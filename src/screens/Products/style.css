@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .products {
   background-color: #ffffff;
   display: flex;
@@ -19,7 +25,7 @@
   left: 0;
   position: absolute;
   top: 3087px;
-  width: 1448px;
+  width: 1446px;
 }
 
 .products .overlap-group {
@@ -68,28 +74,15 @@
   font-family: "Overpass Mono", Helvetica;
   font-size: 16px;
   font-weight: 400;
-  left: 419px;
+  left: 106px;
   letter-spacing: 0;
   line-height: 16px;
   position: absolute;
-  top: 152px;
+  top: 106px;
   width: 362px;
 }
 
-.products .div-3 {
-  color: #ffffff;
-  font-family: "Overpass Mono", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 110px;
-  letter-spacing: 0;
-  line-height: 16px;
-  position: absolute;
-  top: 152px;
-  width: 157px;
-}
-
-.products .div-4 {
+.products .text-wrapper-2 {
   color: #ffffff;
   font-family: "Overpass Mono", Helvetica;
   font-size: 16px;
@@ -101,10 +94,6 @@
   text-align: right;
   top: 152px;
   width: 478px;
-}
-
-.products .text-wrapper-2 {
-  text-decoration: underline;
 }
 
 .products .hero {
@@ -145,7 +134,7 @@
   background-color: #dab131;
   border: 2px solid;
   border-color: #000000;
-  height: 353px;
+  height: 342px;
   left: 1089px;
   position: absolute;
   top: 381px;
@@ -221,7 +210,7 @@
   left: 0;
   position: absolute;
   top: 887px;
-  width: 1450px;
+  width: 1448px;
 }
 
 .products .overlap-3 {
@@ -261,11 +250,11 @@
 
 .products .image-7 {
   height: 407px;
-  left: 2px;
+  border: 2px solid;
   object-fit: cover;
   position: absolute;
   top: 0;
-  width: 299px;
+  width: 303px;
 }
 
 .products .text-input {
@@ -459,21 +448,6 @@
 }
 
 .products .text-wrapper-6 {
-  color: #000000;
-  font-family: "Overpass Mono", Helvetica;
-  font-size: 32px;
-  font-weight: 700;
-  height: 59px;
-  left: 290px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-decoration: underline;
-  top: 179px;
-  width: 229px;
-}
-
-.products .text-wrapper-7 {
   color: #00001c;
   font-family: "Overpass Mono", Helvetica;
   font-size: 32px;
@@ -489,7 +463,7 @@
   width: 229px;
 }
 
-.products .text-wrapper-8 {
+.products .text-wrapper-7 {
   color: #00001c;
   font-family: "Overpass Mono", Helvetica;
   font-size: 32px;
@@ -505,19 +479,19 @@
   width: 229px;
 }
 
-.products .text-wrapper-9 {
+.products .text-wrapper-8 {
   color: #000000;
   font-family: "Rubik Mono One", Helvetica;
   font-size: 40px;
   font-weight: 400;
   height: 56px;
-  left: 303px;
+  left: 283px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 69px;
-  width: 835px;
+  top: 63px;
+  width: 873px;
 }
 
 .products .arrow {
@@ -533,34 +507,13 @@
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-color: #000000;
-  border-top-style: solid;
-  border-top-width: 3px;
+  /* border-top-style: solid;
+  border-top-width: 3px; */
   height: 86px;
   left: 0;
   position: absolute;
   top: 0;
   width: 1440px;
-}
-
-.products .cart {
-  border: 2px solid;
-  border-color: #000000;
-  border-radius: 12px;
-  height: 41px;
-  left: 1045px;
-  position: absolute;
-  top: 19px;
-  width: 43px;
-}
-
-.products .delivery-truck {
-  height: 26px;
-  left: 6px;
-  mix-blend-mode: multiply;
-  object-fit: cover;
-  position: absolute;
-  top: 8px;
-  width: 29px;
 }
 
 .products .home-menu {
@@ -585,76 +538,4 @@
   line-height: normal;
   position: absolute;
   top: 27px;
-}
-
-.products .customerservice {
-  color: #000000;
-  font-family: "Overpass Mono", Helvetica;
-  font-size: 20px;
-  font-weight: 600;
-  left: 381px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 27px;
-}
-
-.products .card {
-  align-items: center;
-  border: 2px solid;
-  border-color: #00000003;
-  border-radius: 4px;
-  box-shadow: 1px 1px 0px #00000003;
-  display: flex;
-  gap: 10px;
-  height: 40px;
-  justify-content: center;
-  left: 1100px;
-  padding: 10px;
-  position: absolute;
-  top: 20px;
-  width: 113px;
-}
-
-.products .enabled-login {
-  color: #000000;
-  font-family: "Overpass Mono", Helvetica;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-top: -2px;
-  position: relative;
-  width: fit-content;
-}
-
-.products .hovered-signup-wrapper {
-  all: unset;
-  align-items: center;
-  background-color: #a7a6ff;
-  border: 2px solid;
-  border-color: #000000;
-  border-radius: 4px;
-  box-shadow: var(--shadow-2px-shadow);
-  box-sizing: border-box;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  left: 1231px;
-  padding: 10px;
-  position: absolute;
-  top: 20px;
-  width: 139px;
-}
-
-.products .hovered-signup {
-  color: #000000;
-  font-family: "Overpass Mono", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-top: -2px;
-  position: relative;
-  width: fit-content;
 }
