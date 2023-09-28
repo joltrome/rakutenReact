@@ -27,8 +27,8 @@
   border-bottom-style: solid;
   border-bottom-width: 5px;
   border-color: #000000;
-  height: 820px;
-  left: 111px;
+  height: 9000px;
+  left: 95px;
   position: absolute;
   top: 0;
   width: 1440px;
@@ -274,7 +274,7 @@
   width: 162px;
 }
 
-.home-page .enabled {
+.home-page .text-wrapper-2 {
   color: #000000;
   flex: 1;
   font-family: "Overpass Mono", Helvetica;
@@ -287,7 +287,7 @@
   text-align: center;
 }
 
-.home-page .enabled-wrapper {
+.home-page .div-wrapper {
   all: unset;
   align-items: center;
   background-color: #a7a5ff0d;
@@ -322,7 +322,7 @@
   width: 117px;
 }
 
-.home-page .text-wrapper-2 {
+.home-page .text-wrapper-3 {
   color: #000000;
   font-family: "Inter", Helvetica;
   font-size: 16px;
@@ -342,7 +342,7 @@
   width: 2.51px;
 }
 
-.home-page .div-wrapper {
+.home-page .enabled-wrapper {
   all: unset;
   align-items: center;
   background-color: #a7a5ff0d;
@@ -358,6 +358,98 @@
   padding: 10px 12px;
   position: relative;
   width: 154px;
+}
+
+.home-page .img {
+  height: 194px;
+  left: 141px;
+  object-fit: cover;
+  position: absolute;
+  top: 521px;
+  width: 259px;
+}
+
+.home-page .image-2 {
+  height: 188px;
+  left: 242px;
+  object-fit: cover;
+  position: absolute;
+  top: 218px;
+  width: 188px;
+}
+
+.home-page .image-3 {
+  height: 204px;
+  left: 553px;
+  object-fit: cover;
+  position: absolute;
+  top: 470px;
+  width: 258px;
+}
+
+.home-page .image-hiro {
+  height: 180px;
+  left: 553px;
+  object-fit: cover;
+  position: absolute;
+  top: 216px;
+  width: 258px;
+}
+
+.home-page .text-wrapper-4 {
+  color: #000000;
+  font-family: "Overpass Mono", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 251px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 425px;
+  width: 152px;
+}
+
+.home-page .text-wrapper-5 {
+  color: #000000;
+  font-family: "Overpass Mono", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 147px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 728px;
+  width: 256px;
+}
+
+.home-page .text-wrapper-6 {
+  color: #000000;
+  font-family: "Overpass Mono", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 566px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 725px;
+  width: 230px;
+}
+
+.home-page .text-wrapper-hiro {
+  color: #000000;
+  font-family: "Overpass Mono", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 566px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 425px;
+  width: 230px;
 }
 
 .home-page .overlap-4 {
@@ -392,7 +484,7 @@
   width: 1440px;
 }
 
-.home-page .img {
+.home-page .image-4 {
   height: 85px;
   left: 839px;
   object-fit: cover;
@@ -422,7 +514,7 @@
   letter-spacing: 0;
 }
 
-.home-page .text-wrapper-3 {
+.home-page .text-wrapper-7 {
   line-height: 32px;
 }
 
@@ -439,7 +531,7 @@
   width: 362px;
 }
 
-.home-page .text-wrapper-4 {
+.home-page .text-wrapper-8 {
   color: #ffffff;
   font-family: "Overpass Mono", Helvetica;
   font-size: 16px;
@@ -470,7 +562,7 @@
 }
 
 .home-page .overlap-6 {
-  background-image: url(../../../static/img/image-14.png);
+  background-image: url(../../../static/img/image-17.png);
   background-position: 50% 50%;
   background-size: cover;
   height: 589px;
@@ -479,7 +571,7 @@
 }
 
 .home-page .FORMALS-styles-wrapper {
-  background-image: url(../../../static/img/image-13.png);
+  background-image: url(../../../static/img/image-16.png);
   background-position: 50% 50%;
   background-size: cover;
   height: 165px;
@@ -489,7 +581,7 @@
   width: 602px;
 }
 
-.home-page .text-wrapper-5 {
+.home-page .text-wrapper-9 {
   color: #ffffff;
   font-family: "Rubik Mono One", Helvetica;
   font-size: 24px;
@@ -505,7 +597,7 @@
 }
 
 .home-page .CASUALS-styles-wrapper {
-  background-image: url(../../../static/img/image-12.png);
+  background-image: url(../../../static/img/image-15.png);
   background-position: 50% 50%;
   background-size: cover;
   height: 165px;
@@ -539,7 +631,7 @@
   width: 480px;
 }
 
-.home-page .image-2 {
+.home-page .image-5 {
   height: 350px;
   left: 223px;
   object-fit: cover;
@@ -548,7 +640,7 @@
   width: 492px;
 }
 
-.home-page .text-wrapper-6 {
+.home-page .text-wrapper-10 {
   color: #ffffff;
   font-family: "Rubik Beastly", Helvetica;
   font-size: 50px;
@@ -596,7 +688,7 @@
   width: 480px;
 }
 
-.home-page .text-wrapper-7 {
+.home-page .text-wrapper-11 {
   color: #000000;
   font-family: "Overpass Mono", Helvetica;
   font-size: 24px;
@@ -609,7 +701,7 @@
   width: 272px;
 }
 
-.home-page .image-3 {
+.home-page .image-6 {
   height: 52px;
   left: 104px;
   object-fit: cover;
@@ -629,7 +721,7 @@
   width: 484px;
 }
 
-.home-page .text-wrapper-8 {
+.home-page .text-wrapper-12 {
   color: #000000;
   font-family: "Overpass Mono", Helvetica;
   font-size: 24px;
@@ -643,7 +735,7 @@
   width: 272px;
 }
 
-.home-page .image-4 {
+.home-page .image-7 {
   height: 57px;
   left: 317px;
   object-fit: cover;
@@ -678,7 +770,7 @@
   width: 272px;
 }
 
-.home-page .image-5 {
+.home-page .image-8 {
   height: 58px;
   left: 209px;
   object-fit: cover;
@@ -713,7 +805,7 @@
   width: 272px;
 }
 
-.home-page .image-6 {
+.home-page .image-9 {
   height: 65px;
   left: 205px;
   object-fit: cover;
@@ -747,7 +839,7 @@
   width: 380px;
 }
 
-.home-page .image-7 {
+.home-page .image-10 {
   height: 359px;
   left: 0;
   object-fit: cover;
@@ -809,7 +901,7 @@
   width: 380px;
 }
 
-.home-page .image-8 {
+.home-page .image-11 {
   height: 376px;
   left: 0;
   object-fit: cover;
@@ -834,7 +926,7 @@
   width: 376px;
 }
 
-.home-page .text-wrapper-9 {
+.home-page .text-wrapper-13 {
   color: #000000;
   font-family: "Overpass Mono", Helvetica;
   font-size: 16px;
@@ -880,15 +972,15 @@
 }
 
 .home-page .card {
-  height: 577px;
+  height: 424px;
   left: 1712px;
   position: absolute;
-  top: 0;
+  top: 153px;
   width: 380px;
 }
 
-.home-page .image-9 {
-  height: 512px;
+.home-page .image-12 {
+  height: 376px;
   left: 0;
   object-fit: cover;
   position: absolute;
@@ -905,10 +997,10 @@
   border-left-width: 2px;
   border-right-style: solid;
   border-right-width: 2px;
-  height: 65px;
+  height: 48px;
   left: 0;
   position: absolute;
-  top: 512px;
+  top: 376px;
   width: 376px;
 }
 
@@ -931,7 +1023,7 @@
   width: 376px;
 }
 
-.home-page .text-wrapper-10 {
+.home-page .text-wrapper-14 {
   color: #000000;
   font-family: "Overpass Mono", Helvetica;
   font-size: 20px;
