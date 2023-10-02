@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
-function ProductCards() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://your-django-api-endpoint/products/")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-  return <div>{/* Render product cards here */}</div>;
+function ProductCards({ product }) {
+  return (
+    <div className="checkbox">
+      <div className="overlap-group-3">
+        <img className="image-7" alt="Image" src="/img/image-7.png" />
+        <div className="text-input">
+          <div className="cargotrousers">{product.name}</div>
+          <div className="rs">￥{product.price}</div>
+        </div>
+        <div className="cargotrousers-2">Buy Now</div>
+      </div>
+    </div>
+  );
 }
 
 export default ProductCards;

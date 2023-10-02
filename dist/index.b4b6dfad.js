@@ -27168,199 +27168,69 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _styleCss = require("./style.css");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _productCards = require("./ProductCards");
+var _productCardsDefault = parcelHelpers.interopDefault(_productCards);
+var _mockData = require("./mockData");
+var _mockDataDefault = parcelHelpers.interopDefault(_mockData);
 var _s = $RefreshSig$();
 const Products = ()=>{
     _s();
     const [details, setDetails] = (0, _react.useState)([]); // Initialize 'details' as a state variable
+    const [sortOrder, setSortOrder] = (0, _react.useState)("");
+    const [sortCriteria, setSortCriteria] = (0, _react.useState)("");
     (0, _react.useEffect)(()=>{
-        // Perform data fetching or other side effects here
-        const fetchData = async ()=>{
-            try {
-                const response = await (0, _axiosDefault.default).get("http://127.0.0.1:8000"); // Replace 'your-api-endpoint' with the actual API URL
-                setDetails(response.data);
-                console.log(response.data); // Update the 'details' state with the fetched data
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchData(); // Call the fetchData function when the component mounts
-    }, []); // The empty dependency array ensures that this effect runs once when the component mounts
+        // For testing, use mock data
+        setDetails((0, _mockDataDefault.default));
+    }, []);
+    const [isOpen, setIsOpen] = (0, _react.useState)(false);
+    const toggleOptions = ()=>{
+        setIsOpen(!isOpen);
+    };
+    const sortProducts = (criteria)=>{
+        const sortedProducts = [
+            ...details
+        ];
+        if (criteria === "price") sortedProducts.sort((a, b)=>{
+            if (sortOrder === "asc") return a.price - b.price;
+            else return b.price - a.price;
+        });
+        // else if (criteria === "review") {
+        //   sortedProducts.sort((a, b) => {
+        //     if (sortOrder === "asc") {
+        //       return a.review - b.review;
+        //     } else {
+        //       return b.review - a.review;
+        //     }
+        //   });
+        // }
+        setDetails(sortedProducts);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "products",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "tooltip",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "overlap-group",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "image",
-                            alt: "Image",
-                            src: "/img/image.png"
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 28,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "p",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    className: "text-wrapper",
-                                    children: [
-                                        "Corporate Info",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 32,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 30,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    className: "span",
-                                    children: [
-                                        "Career",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 37,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 35,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    className: "text-wrapper",
-                                    children: [
-                                        "Press",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 41,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        "Investor relations",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 43,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        "Corporate governance"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 39,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 29,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "div-2",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    className: "text-wrapper",
-                                    children: [
-                                        "Help",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 50,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 48,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                    className: "span",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Customer Service"
-                                        }, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 53,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Legal & Privacy"
-                                        }, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 54,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Contact"
-                                        }, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 55,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Report a scam"
-                                        }, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 56,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Cookie Settings"
-                                        }, void 0, false, {
-                                            fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 57,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 52,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 47,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "text-wrapper-2",
-                            children: [
-                                "Stay Connected with Us! Discover the best omiyage from Japan and be in the know about exclusive offers and cultural insights",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 63,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 64,
-                                    columnNumber: 13
-                                }, undefined),
-                                " [Explore More]"
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 60,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/screens/Products/Products.jsx",
-                    lineNumber: 27,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
+                className: "text-input-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "home-menu",
+                        children: "Home"
+                    }, void 0, false, {
+                        fileName: "src/screens/Products/Products.jsx",
+                        lineNumber: 52,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "findastore-menu",
+                        children: "Customer Service"
+                    }, void 0, false, {
+                        fileName: "src/screens/Products/Products.jsx",
+                        lineNumber: 53,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/screens/Products/Products.jsx",
-                lineNumber: 26,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27374,7 +27244,7 @@ const Products = ()=>{
                             src: "/img/image-1.png"
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 70,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27383,98 +27253,88 @@ const Products = ()=>{
                             src: "/img/Yatsuhashi.png"
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 71,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "overlap-2",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    className: "image-3",
-                                    alt: "Image",
-                                    src: "/img/image-4.png"
-                                }, void 0, false, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 73,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    className: "image-4",
-                                    alt: "Image",
-                                    src: "/img/image-4.png"
-                                }, void 0, false, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 74,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "text-wrapper-3",
-                                    children: "Elevate Gifting with a Touch of Japan"
-                                }, void 0, false, {
-                                    fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 75,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 72,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "overlap-group-2",
+                            className: "overlapGroups",
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "text-wrapper-4",
+                                    className: "overlap-group-2",
                                     children: [
-                                        "With love.",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                            children: details.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                    children: [
-                                                        item.name,
-                                                        ": ",
-                                                        item.price
-                                                    ]
-                                                }, item.name, true, {
-                                                    fileName: "src/screens/Products/Products.jsx",
-                                                    lineNumber: 84,
-                                                    columnNumber: 19
-                                                }, undefined))
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "text-wrapper-4",
+                                            children: "With love."
                                         }, void 0, false, {
                                             fileName: "src/screens/Products/Products.jsx",
-                                            lineNumber: 82,
+                                            lineNumber: 61,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                            className: "image-5",
+                                            alt: "Image",
+                                            src: "/img/image-5.png"
+                                        }, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 62,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 60,
                                     columnNumber: 13
                                 }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    className: "image-5",
-                                    alt: "Image",
-                                    src: "/img/image-5.png"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "overlap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-wrapper-3",
+                                            children: "Elevate Gifting with a Touch of Japan"
+                                        }, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 65,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                            className: "image-3",
+                                            alt: "Image",
+                                            src: "/img/image-4.png"
+                                        }, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 68,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                            className: "image-4",
+                                            alt: "Image",
+                                            src: "/img/image-4.png"
+                                        }, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 69,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/screens/Products/Products.jsx",
-                                    lineNumber: 90,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 79,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/screens/Products/Products.jsx",
-                    lineNumber: 69,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/screens/Products/Products.jsx",
-                lineNumber: 68,
+                lineNumber: 55,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27482,799 +27342,116 @@ const Products = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "overlap-3",
                     children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "text-wrapper-8",
+                            children: "OmiyageOdyssey Collection"
+                        }, void 0, false, {
+                            fileName: "src/screens/Products/Products.jsx",
+                            lineNumber: 76,
+                            columnNumber: 11
+                        }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             className: "image-6",
                             alt: "Image",
                             src: "/img/image-6.png"
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 96,
+                            lineNumber: 77,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "checkbox",
+                            className: "text-input-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
+                                className: "all-sort-options",
                                 children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-7.png"
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "button",
+                                        className: "text-wrapper-5",
+                                        onClick: toggleOptions,
+                                        value: "Sort"
                                     }, void 0, false, {
                                         fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 99,
+                                        lineNumber: 80,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
+                                        className: "options-dropdown",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "button",
+                                                className: `sort-options price-up ${isOpen ? "visible" : ""}`,
+                                                value: "price-up",
+                                                onClick: ()=>{
+                                                    setSortCriteria("price");
+                                                    setSortOrder("asc");
+                                                    sortProducts("price");
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/screens/Products/Products.jsx",
+                                                lineNumber: 87,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "button",
+                                                className: `sort-options price-down ${isOpen ? "visible" : ""}`,
+                                                value: "price-down",
+                                                onClick: ()=>{
+                                                    setSortCriteria("price");
+                                                    setSortOrder("desc");
+                                                    sortProducts("price");
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/screens/Products/Products.jsx",
+                                                lineNumber: 97,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "button",
+                                                className: `sort-options review-up ${isOpen ? "visible" : ""}`,
+                                                value: "review-up"
+                                            }, void 0, false, {
+                                                fileName: "src/screens/Products/Products.jsx",
+                                                lineNumber: 109,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "button",
+                                                className: `sort-options review-down ${isOpen ? "visible" : ""}`,
+                                                value: "review-down"
+                                            }, void 0, false, {
+                                                fileName: "src/screens/Products/Products.jsx",
+                                                lineNumber: 116,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 100,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 101,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Flannel shirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 102,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 103,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 2,299.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 104,
+                                        lineNumber: 86,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 98,
+                                lineNumber: 79,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 97,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "overlap-wrapper",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-8.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 109,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 110,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 111,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Flannel shirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 112,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 113,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 2,299.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 114,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 108,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 107,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "overlap-group-wrapper",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-9.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 119,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 120,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 121,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Flannel shirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 122,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 123,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 2,299.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 124,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 118,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 117,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "button",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-10.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 129,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 130,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 131,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Cargo Joggers"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 132,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 133,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 1,899.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 134,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 128,
-                                columnNumber: 13
-                            }, undefined)
+                            className: "productsList",
+                            children: details.map((product)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productCardsDefault.default), {
+                                    product: product
+                                }, product.id, false, {
+                                    fileName: "src/screens/Products/Products.jsx",
+                                    lineNumber: 129,
+                                    columnNumber: 15
+                                }, undefined))
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
                             lineNumber: 127,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "div-wrapper",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-11.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 139,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 140,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 141,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Cargo Joggers"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 142,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 143,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 1,899.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 144,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 138,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 137,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "button-2",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-12.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 149,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 150,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 151,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Cargo Joggers"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 152,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 153,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 1,899.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 154,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 148,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 147,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-13.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 159,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 160,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 161,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Checked shirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 162,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 163,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 2,299.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 164,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 158,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 157,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container-2",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-14.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 169,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 170,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 171,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Checked shirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 172,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 173,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 2,299.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 174,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 168,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 167,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container-3",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-15.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 179,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 180,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 181,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Checked shirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 182,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 183,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 2,299.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 184,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 178,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 177,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container-4",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-16.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 189,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 190,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 191,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Sweatshirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 192,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 193,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 799.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 194,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 188,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 187,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container-5",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-17.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 199,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 200,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 201,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Sweatshirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 202,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 203,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 799.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 204,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 198,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 197,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container-6",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "overlap-group-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "image-7",
-                                        alt: "Image",
-                                        src: "/img/image-18.png"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 209,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 210,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-input-2"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 211,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers",
-                                        children: "Sweatshirt"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 212,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cargotrousers-2",
-                                        children: "Buy Now"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 213,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "rs",
-                                        children: "Rs 799.00"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/Products/Products.jsx",
-                                        lineNumber: 214,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/Products/Products.jsx",
-                                lineNumber: 208,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 207,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "text-input-3"
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 217,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "text-input-4"
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 218,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "text-wrapper-5",
-                            children: "SORT"
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 219,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "text-wrapper-6",
-                            children: "28 Items"
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 220,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28282,15 +27459,7 @@ const Products = ()=>{
                             children: "Load More"
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 221,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "text-wrapper-8",
-                            children: "OmiyageOdyssey Collection"
-                        }, void 0, false, {
-                            fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 222,
+                            lineNumber: 252,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -28299,53 +27468,221 @@ const Products = ()=>{
                             src: "/img/arrow-2.svg"
                         }, void 0, false, {
                             fileName: "src/screens/Products/Products.jsx",
-                            lineNumber: 223,
+                            lineNumber: 253,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/screens/Products/Products.jsx",
-                    lineNumber: 95,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/screens/Products/Products.jsx",
-                lineNumber: 94,
+                lineNumber: 74,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "text-input-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "home-menu",
-                        children: "Home"
-                    }, void 0, false, {
-                        fileName: "src/screens/Products/Products.jsx",
-                        lineNumber: 227,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "findastore-menu",
-                        children: "Customer Service"
-                    }, void 0, false, {
-                        fileName: "src/screens/Products/Products.jsx",
-                        lineNumber: 228,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                className: "tooltip",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "overlap-group",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "pAndText2",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "p",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "text-wrapper",
+                                            children: [
+                                                "Corporate Info",
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 263,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 261,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            className: "span",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Career"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 266,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Press"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 267,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Investor relations"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 268,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Corporate governance"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 269,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Cookie Settings"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 270,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 265,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/screens/Products/Products.jsx",
+                                    lineNumber: 260,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-wrapper-2",
+                                    children: [
+                                        "Stay Connected with Us! Discover the best omiyage from Japan and be in the know about exclusive offers and cultural insights",
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 276,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 277,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        " [Explore More]"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/screens/Products/Products.jsx",
+                                    lineNumber: 273,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/screens/Products/Products.jsx",
+                            lineNumber: 259,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "div-2AndImage",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "div-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "text-wrapper",
+                                            children: "Help"
+                                        }, void 0, false, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 282,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            className: "span",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Customer Service"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 284,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Legal & Privacy"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 285,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Contact"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 286,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Report a scam"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 287,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: "Cookie Settings"
+                                                }, void 0, false, {
+                                                    fileName: "src/screens/Products/Products.jsx",
+                                                    lineNumber: 288,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/screens/Products/Products.jsx",
+                                            lineNumber: 283,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/screens/Products/Products.jsx",
+                                    lineNumber: 281,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    className: "image",
+                                    alt: "Image",
+                                    src: "/img/image.png"
+                                }, void 0, false, {
+                                    fileName: "src/screens/Products/Products.jsx",
+                                    lineNumber: 291,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/screens/Products/Products.jsx",
+                            lineNumber: 280,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/screens/Products/Products.jsx",
+                    lineNumber: 258,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/screens/Products/Products.jsx",
-                lineNumber: 226,
+                lineNumber: 257,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/screens/Products/Products.jsx",
-        lineNumber: 24,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined);
 };
-_s(Products, "2ca5BbBEuRMF5gofyWl7Da9A+Q8=");
+_s(Products, "lL2E3d6mh79rNjihKBv+Raqb+3E=");
 _c = Products;
 var _c;
 $RefreshReg$(_c, "Products");
@@ -28355,7 +27692,7 @@ $RefreshReg$(_c, "Products");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./style.css":"iUXsr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5"}],"iUXsr":[function() {},{}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./style.css":"iUXsr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5","./ProductCards":"9bYTs","./mockData":"8joBK"}],"iUXsr":[function() {},{}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -33331,6 +32668,138 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
     HttpStatusCode[value] = key;
 });
 exports.default = HttpStatusCode;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9bYTs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5d3d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5d3d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+function ProductCards({ product }) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "checkbox",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "overlap-group-3",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "image-7",
+                    alt: "Image",
+                    src: "/img/image-7.png"
+                }, void 0, false, {
+                    fileName: "src/screens/Products/ProductCards.js",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "text-input",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "cargotrousers",
+                            children: product.name
+                        }, void 0, false, {
+                            fileName: "src/screens/Products/ProductCards.js",
+                            lineNumber: 9,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "rs",
+                            children: [
+                                "￥",
+                                product.price
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/screens/Products/ProductCards.js",
+                            lineNumber: 10,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/screens/Products/ProductCards.js",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "cargotrousers-2",
+                    children: "Buy Now"
+                }, void 0, false, {
+                    fileName: "src/screens/Products/ProductCards.js",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/screens/Products/ProductCards.js",
+            lineNumber: 6,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/screens/Products/ProductCards.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = ProductCards;
+exports.default = ProductCards;
+var _c;
+$RefreshReg$(_c, "ProductCards");
+
+  $parcel$ReactRefreshHelpers$5d3d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8joBK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const mockProducts = [
+    {
+        id: 1,
+        name: "大阪　お土産　大阪の巻 。 12個入　バウムクーヘン　お取り寄せ　お菓子　関西　プレゼント　母の日　スイーツ　東京　名古屋　出張　〈2023 11年連続 モンドセレクション 受賞〉 グルメ 敬老の日　名物　ギフト名物　京都　修学旅行 全国　うまいもの　取り寄せ",
+        price: 702
+    },
+    {
+        id: 2,
+        name: "内祝い お菓子 プチギフト 【バターガレット9個入】 バターバトラー あす楽 退職 お礼 退職 お菓子 スイーツ 焼き菓子 ガレット クッキー サクサク バター 洋菓子 ギフト プレゼント 東京 お土産 手土産 ご挨拶 内祝い お返し お祝い 出産内祝い",
+        price: 972
+    },
+    {
+        id: 3,
+        name: "レモンタルト 御中元 国産レモン 21個入り 個包装 おひなたレモン レモンクッキー レモン お菓子 レモンスイーツ レモンケーキ 檸檬タルト お取り寄せ ギフト 結婚祝い 誕生日 出産 贈り物 プレゼント 菓子折り 手土産 瀬戸田レモン 広島土産 岡山",
+        price: 1188
+    },
+    {
+        id: 4,
+        name: "Tokyo Baked Base ギフトセット Sサイズ｜ SAND COOKIE LANGUE DE CHAT｜御歳暮 お歳暮 冬ギフト 2023 内祝い お礼 お返し お祝い プレゼント お菓子 ギフト スイーツ あまおう 焼き菓子 洋菓子 お土産 手土産 個包装 東京 あす楽対応 送料無料 宅急便発送 Agift",
+        price: 2970
+    },
+    {
+        id: 5,
+        name: "大阪　お土産　大阪の巻 。 12個入　バウムクーヘン　お取り寄せ　お菓子　関西　プレゼント　母の日　スイーツ　東京　名古屋　出張　〈2023 11年連続 モンドセレクション 受賞〉 グルメ 敬老の日　名物　ギフト名物　京都　修学旅行 全国　うまいもの　取り寄せ",
+        price: 702
+    },
+    {
+        id: 6,
+        name: "内祝い お菓子 プチギフト 【バターガレット9個入】 バターバトラー あす楽 退職 お礼 退職 お菓子 スイーツ 焼き菓子 ガレット クッキー サクサク バター 洋菓子 ギフト プレゼント 東京 お土産 手土産 ご挨拶 内祝い お返し お祝い 出産内祝い",
+        price: 972
+    },
+    {
+        id: 7,
+        name: "レモンタルト 御中元 国産レモン 21個入り 個包装 おひなたレモン レモンクッキー レモン お菓子 レモンスイーツ レモンケーキ 檸檬タルト お取り寄せ ギフト 結婚祝い 誕生日 出産 贈り物 プレゼント 菓子折り 手土産 瀬戸田レモン 広島土産 岡山",
+        price: 1188
+    },
+    {
+        id: 8,
+        name: "Tokyo Baked Base ギフトセット Sサイズ｜ SAND COOKIE LANGUE DE CHAT｜御歳暮 お歳暮 冬ギフト 2023 内祝い お礼 お返し お祝い プレゼント お菓子 ギフト スイーツ あまおう 焼き菓子 洋菓子 お土産 手土産 個包装 東京 あす楽対応 送料無料 宅急便発送 Agift",
+        price: 2970
+    }
+];
+exports.default = mockProducts;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["4s3Ar","1xC6H","d8Dch"], "d8Dch", "parcelRequireb8e7")
 
